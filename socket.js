@@ -23,11 +23,6 @@ class Socket {
     }
 
     message (e) {
-        const event = JSON.parse(e.data);
-        if (event.name === 'channel add') {
-            this.newChannel(event.data);
-        }
-
         try {
             const message = JSON.parse(e.data);
             this.ee.emit(message.name, message.data);

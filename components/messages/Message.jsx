@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import fecha from 'fecha';
+import moment from 'moment';
 
 class Message extends Component{
 
     render(){
         let {message} = this.props;
-        let createdAt = fecha.format(message.createdAt, 'h:m M/D/YY');
+        let createdAt = moment(message.createdAt).format('h:m M/D/YY');
 
         return (
             <div>
